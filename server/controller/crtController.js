@@ -14,7 +14,6 @@ module.exports = {
 
         try {
             const Usrexst = await CrtModel.findOne({cart_acc:user._id})
-            // const Usrexst = await CrtModel.find().populate({path:'cart_acc', match:{_id:user._id}}).populate({path:'cart_store', populate:{path:'cart_item'}})
             // console.log(Usrexst)
             if (Usrexst) {
                 if (Usrexst !== null) {
