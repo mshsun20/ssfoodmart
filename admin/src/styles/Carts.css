@@ -1,0 +1,95 @@
+
+.cntnr {
+    overflow: auto;
+
+    table {
+        thead {
+            tr {
+                th {
+                    background-color: darkolivegreen;
+                    color: lightgreen;
+                    text-align: center;
+                }
+            }
+        }
+        tbody {
+            tr {
+                td {
+                    padding: 2.5rem;
+
+                    a {
+                        .edtbtn {
+                            color: #0e91c5;
+                            font-size: 2rem;
+                            border: none;
+                        }
+                    }
+                    button {
+                        background-color: transparent;
+                        border: none;
+
+                        .rmvbtn {
+                            color: #ff5e2d;
+                            font-size: 2rem;
+                            border: none;
+                        }
+                    }
+                    .incbtn {
+                        display: none;
+                        color: #007a37;
+                        font-size: 1.2rem;
+                        border: none;
+                    }
+                    .decbtn {
+                        display: none;
+                        color: #bd0000;
+                        font-size: 1.2rem;
+                        border: none;
+                    }
+                    .edtbtn {
+                        color: #0e91c5;
+                        font-size: 1.2rem;
+                        border: none;
+                    }
+                    .cnclbtn {
+                        display: none;
+                        color: #e9009b;
+                        font-size: 1.2rem;
+                        border: none;
+                    }
+                    .updtbtn {
+                        display: none;
+                        color: #14c50e;
+                        font-size: 1.2rem;
+                        border: none;
+                    }
+                }
+                .imag {
+                    img {
+                        width: 7.5rem;
+                        aspect-ratio: 1/1;
+                    }
+                }
+                .cntntnm {
+                    color: mediumslateblue;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                }
+                .cntntratng {
+                    color: hotpink;
+                    font-weight: 600;
+                }
+                button {
+                    background-color: transparent;
+                    border: none;
+
+                    .rmvbtn {
+                        color: #ff5e2d;
+                        font-size: 1.8rem;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+}
