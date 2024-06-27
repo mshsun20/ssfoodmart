@@ -15,7 +15,7 @@ dotenv.config({path:'config.env'})
 app.use(cookieParser())
 app.use(express.json())
 app.use(cors({
-    origin: ['http://localhost:3300', 'http://localhost:3600', 'https://ssfoodmart-client.vercel.app'],
+    origin: ['http://localhost:3300', 'http://localhost:3600', 'https://ssfoodmart-admin.vercel.app', 'https://ssfoodmart-client.vercel.app'],
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS",
     credentials: true,
     optionsSuccessStatus: 200
