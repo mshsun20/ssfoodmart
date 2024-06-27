@@ -28,17 +28,29 @@ module.exports = {
         try {
             const Acc = await AccModel.findOne({$and:[{$or: [{acc_name:acc_id}, {acc_email:acc_id}]}, {acc_pass}]})
             if (Acc) {
-                res.json({success:`User logged in successfully.`, statuscode:220, data:Acc})
+                res.json({success:`Admin logged in successfully.`, statuscode:220, data:Acc})
             }
             else {
-                res.json({error:`User not found ...!!`, statuscode:422})
+                res.json({error:`Admin not found ...!!`, statuscode:422})
             }
         } catch (error) {
             console.error(error)
         }
     },
     upload: async (req, res) => {},
-    read: async (req, res) => {},
+    read: async (req, res) => {
+        try {
+            const Acc = await AccModel.find()
+            if (Acc) {
+                res.json({success:`All Accounts data fetched successfully.`, statuscode:220, data:Acc})
+            }
+            else {
+                res.json({error:`Account data fetch error ...!!`, statuscode:422})
+            }
+        } catch (error) {
+            console.error(error)
+        }
+    },
     update: async (req, res) => {},
     delete: async (req, res) => {},
 }
