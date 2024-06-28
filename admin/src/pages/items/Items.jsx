@@ -15,7 +15,7 @@ const Items = () => {
         try {
             const res = await axios.get(`${Server}/item/fetch`)
             const dta = await res.data
-            // console.log(dta)
+            console.log(dta)
 
             if (dta.statuscode === 220) {
                 setItm(dta.data)
