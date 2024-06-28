@@ -15,7 +15,7 @@ const Carts = () => {
         try {
             const res = await axios.get(`${Server}/cart/fetch`)
             const dta = await res.data
-            // console.log(dta)
+            console.log(dta)
 
             if (dta.statuscode === 220) {
                 setCrt(dta.data)
