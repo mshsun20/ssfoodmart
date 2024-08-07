@@ -1,0 +1,219 @@
+
+.main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  padding: 1rem;
+  font-size: 1.5rem;
+
+  .brdcrmb {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 75%;
+    padding: 2rem;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .hdr {
+    padding: 2rem 5rem;
+    color: magenta;
+    font-size: 3.5rem;
+    font-weight: 100;
+    letter-spacing: 0.5rem;
+  }
+
+  .cardgrp {
+    padding: 2rem 10rem 5rem;
+
+    .cards {
+      padding: 0rem;
+
+      .cardelm {
+        width: 33.3%;
+        min-height: 10rem;
+        padding: 2rem;
+
+        .card {
+          height: 100%;
+          padding: 0rem;
+          border: 0.1rem outset;
+
+          a {
+            width: 100%;
+            height: 100%;
+
+            .card-img-top {
+              width: 100%;
+              height: 100%;
+              aspect-ratio: 2/1.5;
+            }
+          }
+
+          .card-body {
+            padding: 2rem;
+
+            .card-title {
+              padding: 1rem;
+              margin: 0;
+              color: var(--theme);
+              font-size: 1.8rem;
+              font-weight: bold;
+              text-transform: capitalize;
+            }
+            .card-text {
+              padding: 1rem;
+              margin: 0;
+              color: var(--para);
+              font-size: 1.2rem;
+              font-weight: 300;
+              text-transform: capitalize;
+            }
+            .crdvl {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              flex-flow: row wrap;
+              padding: 0.8rem 1rem;
+
+              .crdcst {
+                /* background-color: coral; */
+
+                .prc {
+                  color: crimson;
+                  font-size: 1.6rem;
+                  font-weight: bold;
+                }
+                .unt {
+                  color: cornflowerblue;
+                  font-size: 1.2rem;
+                  font-weight: 500;
+                }
+              }
+              .crdrt {
+                .rt {
+                  color: lightseagreen;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                }
+              }
+            }
+            .crdact {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .cntnr {
+    width: 75%;
+    padding: 2rem;
+
+    .dtlsec {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-flow: row wrap;
+
+      .carousel {
+        width: 50%;
+        padding: 3rem;
+
+        .carousel-item {
+          img {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 2/1.5;
+            padding: 2rem;
+          }
+        }
+      }
+
+      .bdy {
+        width: 50%;
+        padding: 3rem;
+
+        .hds {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          padding: 0.5rem 1rem;
+          color: darkolivegreen;
+          font-size: 3rem;
+          /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+          color: darkcyan;
+          font-weight: 100;
+          text-align: start;
+          text-transform: capitalize;
+          letter-spacing: 0.25rem;
+        }
+
+        .dtl {
+          padding: 2rem 0;
+
+          .card-text {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-flow: row wrap;
+            padding: 0.8rem 1rem;
+            font-size: 1.3rem;
+          }
+
+          .crdvl {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: column;
+            padding: 0.8rem 1rem;
+
+            .crdcst {
+              font-size: 1.2rem;
+
+              .prc {
+                color: crimson;
+                font-size: 1.6rem;
+                font-weight: bold;
+              }
+              .unt {
+                color: cornflowerblue;
+                font-size: 1.2rem;
+                font-weight: 500;
+              }
+            }
+            .crdrt {
+              font-size: 1.2rem;
+
+              .rt {
+                color: lightseagreen;
+                font-size: 1.4rem;
+                font-weight: 600;
+              }
+            }
+          }
+
+          .crdact {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            /* flex-direction: row; */
+            padding: 1rem;
+          }
+
+          .crdbtn {
+            padding: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
