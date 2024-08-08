@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import Header from '../../../../components/Header'
 import Footer from '../../../../components/Footer'
@@ -10,6 +10,23 @@ const Addstts = () => {
   const [cntry, setCntry] = useState()
   const navig = useNavigate()
   let name, value
+
+  const getCntry = async () => {
+    try {
+      const res = await axios.get(`${Server}/masters/locm/cntrym/fetch`)
+      const dta = await res.data
+
+      if (dta.statuscode === 220) {
+        setCntry(dta.data)
+      }
+      else {
+        setCntry(null)
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
+  useEffect(() => getCntry, [])
 
   const hndlinp = (e) => {
     name = e.target.name
@@ -53,16 +70,33 @@ const Addstts = () => {
                     <div className="content">
                       <form className="frm">
                         <div className="form-group">
-                          <label>Country Name:</label>
-                          <input type="text" name='cntry_name' id='cntry_name' className="form-control" placeholder="Enter country name" onChange={hndlinp}/>
+                          <label>State Code:</label>
+                          <input type="text" name='stt_code' id='stt_code' className="form-control" placeholder="Enter state code" onChange={hndlinp}/>
                         </div>
                         <div className="form-group">
-                          <label>Country Code:</label>
-                          <input type="text" name='cntry_code' id='cntry_code' className="form-control" placeholder="Enter country code" onChange={hndlinp}/>
+                          <label>State Name:</label>
+                          <input type="text" name='cntry_name' id='cntry_name' className="form-control" placeholder="Enter state name" onChange={hndlinp}/>
                         </div>
                         <div className="form-group">
-                          <label>Country Info:</label>
-                          <input type="text" name='cntry_info' id='cntry_info' className="form-control" placeholder="Enter country code" onChange={hndlinp}/>
+                          <label>State Info:</label>
+                          <input type="text" name='cntry_name' id='cntry_name' className="form-control" placeholder="Enter state info" onChange={hndlinp}/>
+                        </div>
+                        <div className="form-group">
+                          <label>Country:</label>
+                          <select name="cntry" id="cntry" className="form-select">
+                            {
+                              cntry&&(
+                                <>
+                                  <option value="0">-----Select Country-----</option>
+                                  {
+                                    cntry.map((elm, i) => (
+                                      <option value={elm._id} key={i}>{elm.cntry_name}</option>
+                                    ))
+                                  }
+                                </>
+                              )
+                            }
+                          </select>
                         </div>
                         <button type="submit" className="btn btn-primary" onClick={hndlsub}>Submit</button>
                       </form>
