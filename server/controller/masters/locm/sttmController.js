@@ -3,6 +3,7 @@ const SttmModel = require('../../../model/masters/locm/sttmModel')
 module.exports = {
     create: async (req, res) => {
         const {stt_code, stt_name, stt_info, cntry} = req.body
+        // console.log(req.body)
 
         try {
             const Sttexst = await SttmModel.findOne({$or:[{stt_code}, {stt_name}]})

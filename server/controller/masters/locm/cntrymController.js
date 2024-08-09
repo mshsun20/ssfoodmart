@@ -26,7 +26,7 @@ module.exports = {
     read: async (req, res) => {
         try {
             const Cntry = await CntrymModel.find()
-            res.json({message:`All Districts ata fetched successfully`, statuscode:220, data:Cntry})
+            res.json({message:`All Countries ata fetched successfully`, statuscode:220, data:Cntry})
         } catch (error) {
             console.error(error)
         }

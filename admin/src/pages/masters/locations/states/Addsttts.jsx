@@ -15,6 +15,7 @@ const Addstts = () => {
     try {
       const res = await axios.get(`${Server}/masters/locm/cntrym/fetch`)
       const dta = await res.data
+      console.log(dta)
 
       if (dta.statuscode === 220) {
         setCntry(dta.data)
@@ -84,24 +85,24 @@ const Addstts = () => {
                         </div>
                         <div className="form-group">
                           <label>Country:</label>
-                          <select name="cntry" id="cntry" className="form-select">
-                            <option value="0">-----Select Country-----</option>
+                          <select name="cntry" id="cntry" className="form-select" onChange={hndlinp}>
+                            {/* <option value="0">-----Select Country-----</option>
                             {
                               cntry&&cntry.map((elm, i) => (
                                 <option value={elm._id} key={i}>{elm.cntry_name}</option>
                               ))
-                            }
+                            } */}
                             {
-                              // cntry&&(
-                              //   <>
-                              //     <option value="0">-----Select Country-----</option>
-                              //     {
-                              //       cntry.map((elm, i) => (
-                              //         <option value={elm._id} key={i}>{elm.cntry_name}</option>
-                              //       ))
-                              //     }
-                              //   </>
-                              // )
+                              cntry&&(
+                                <>
+                                  <option value="0">-----Select Country-----</option>
+                                  {
+                                    cntry.map((elm, i) => (
+                                      <option value={elm._id} key={i}>{elm.cntry_name}</option>
+                                    ))
+                                  }
+                                </>
+                              )
                             }
                           </select>
                         </div>
