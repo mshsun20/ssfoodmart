@@ -10,7 +10,7 @@ module.exports = {
                 res.json({message:`State already exists ...!`, statuscode:422, data:Sttexst})
             }
             else {
-                const Stt = await SttmModel.create({stt_code, stt_name, stt_info, cntry})
+                const Stt = await SttmModel.create({stt_code:parseInt(stt_code), stt_name, stt_info, cntry})
                 if (Stt) {
                     res.json({message:`State data added successfully.`, statuscode:220, data:Stt})
                 }
@@ -26,7 +26,7 @@ module.exports = {
     read: async (req, res) => {
         try {
             const Stt = await SttmModel.find().populate({path:'cntry'})
-            res.json({message:`All Districts ata fetched successfully`, statuscode:220, data:Stt})
+            res.json({message:`All States ata fetched successfully`, statuscode:220, data:Stt})
         } catch (error) {
             console.error(error)
         }

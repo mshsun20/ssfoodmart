@@ -39,7 +39,7 @@ const States = () => {
                     </div>
                     <div className="content">
                       {
-                        stt&&(
+                        stt&&(stt.length>0)&&(
                           <table className='table table-striped table-hover'>
                             <thead>
                               <tr>

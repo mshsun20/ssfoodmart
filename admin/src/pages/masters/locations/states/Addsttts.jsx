@@ -37,6 +37,7 @@ const Addstts = () => {
   const hndlsub = async (e) => {
     e.preventDefault()
     const {stt_code, stt_name, stt_info, cntry} = vl
+    console.log(vl)
 
     try {
       // Add your API call here
@@ -75,26 +76,32 @@ const Addstts = () => {
                         </div>
                         <div className="form-group">
                           <label>State Name:</label>
-                          <input type="text" name='cntry_name' id='cntry_name' className="form-control" placeholder="Enter state name" onChange={hndlinp}/>
+                          <input type="text" name='stt_name' id='stt_name' className="form-control" placeholder="Enter state name" onChange={hndlinp}/>
                         </div>
                         <div className="form-group">
                           <label>State Info:</label>
-                          <input type="text" name='cntry_name' id='cntry_name' className="form-control" placeholder="Enter state info" onChange={hndlinp}/>
+                          <input type="text" name='stt_info' id='stt_info' className="form-control" placeholder="Enter state info" onChange={hndlinp}/>
                         </div>
                         <div className="form-group">
                           <label>Country:</label>
                           <select name="cntry" id="cntry" className="form-select">
+                            <option value="0">-----Select Country-----</option>
                             {
-                              cntry&&(
-                                <>
-                                  <option value="0">-----Select Country-----</option>
-                                  {
-                                    cntry.map((elm, i) => (
-                                      <option value={elm._id} key={i}>{elm.cntry_name}</option>
-                                    ))
-                                  }
-                                </>
-                              )
+                              cntry&&cntry.map((elm, i) => (
+                                <option value={elm._id} key={i}>{elm.cntry_name}</option>
+                              ))
+                            }
+                            {
+                              // cntry&&(
+                              //   <>
+                              //     <option value="0">-----Select Country-----</option>
+                              //     {
+                              //       cntry.map((elm, i) => (
+                              //         <option value={elm._id} key={i}>{elm.cntry_name}</option>
+                              //       ))
+                              //     }
+                              //   </>
+                              // )
                             }
                           </select>
                         </div>
